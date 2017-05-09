@@ -1,0 +1,45 @@
+﻿<Window x:Class="DenavitHartenberg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:Green.Settings.UI;assembly=GreenSettings"
+        xmlns:g="clr-namespace:Green.Graphics;assembly=GreenGraphics"
+        xmlns:local="clr-namespace:DenavitHartenberg"
+        Title="Denavit-Hartenberg system illustrator by Péter Major" Height="350" Width="525"
+        MouseWheel="Window_MouseWheel"
+        MouseDown="Window_MouseDown"
+        MouseDoubleClick="Window_MouseDoubleClick"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <local:PresetToMenuConverter x:Key="PresetToMenuConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="256"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" ShowsPreview="true" Width="5"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <g:GraphicsCanvas x:Name="GraphicsCore" Grid.Row="0"/>
+            
+            <ItemsControl x:Name="Presets" Grid.Row="1">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Margin="3" Padding="3" Content="{Binding Converter={StaticResource PresetToMenuConverter}}" Tag="{Binding}" Click="Preset_Click"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>            
+        </Grid>
+
+        <s:SettingManagerControl x:Name="SMC" Grid.Column="2"/>            
+    </Grid>
+</Window>

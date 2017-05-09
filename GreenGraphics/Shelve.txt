@@ -1,0 +1,22 @@
+String^ GetStatus(HRESULT statusCode)
+{
+	switch (statusCode)
+	{
+	case S_NUI_INITIALIZING:
+		return gcnew String("The device is connected, but still initializing.");
+	case E_NUI_NOTCONNECTED:
+		return gcnew String("The device is not connected.");
+	case E_NUI_NOTGENUINE:
+		return gcnew String("The device is not a valid Kinect.");
+	case E_NUI_NOTSUPPORTED:
+		return gcnew String("The device is an unsupported model.");
+	case E_NUI_INSUFFICIENTBANDWIDTH:
+		return gcnew String("The device is connected to a hub without the necessary bandwidth requirements.");
+	case E_NUI_NOTPOWERED:
+		return gcnew String("The device is connected, but unpowered.");
+	case E_NUI_NOTREADY:
+		return gcnew String("The device is not ready.");
+	default:
+		return gcnew String("Unknown error.");
+	}
+}

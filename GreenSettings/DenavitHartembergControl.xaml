@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Green.Settings.UI.DenavitHartembergControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:s="clr-namespace:Green.Settings.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Style.xaml"/>
+    </UserControl.Resources>
+    <Border Style="{StaticResource RootContainer}" IsEnabled="{Binding IsReadOnly, Converter={StaticResource BooleanInverter}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding FriendlyName}" Grid.ColumnSpan="3" VerticalAlignment="Center" FontWeight="{Binding HasDefaultValue, Converter={StaticResource HasDefaultValueToFontWeightConverter}}" TextTrimming="CharacterEllipsis"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="#" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="q" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="d" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="3" Text="a" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="4" Text="alpha" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Grid.Column="5" Content="+" Margin="3" Padding="3" Click="AddTransformation_Click" Width="20"/>
+            </Grid>
+            <StackPanel Grid.Row="2">
+                <ItemsControl ItemsSource="{Binding Joints}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" Tag="{Binding}" Background="Transparent">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Path=Number}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <s:FloatBox Grid.Column="1" Margin="3" Value="{Binding Path=Q, Mode=TwoWay}" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                                <s:FloatBox Grid.Column="2" Margin="3" Value="{Binding Path=D, Mode=TwoWay}" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                                <s:FloatBox Grid.Column="3" Margin="3" Value="{Binding Path=A, Mode=TwoWay}" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                                <s:FloatBox Grid.Column="4" Margin="3" Value="{Binding Path=Alpha, Mode=TwoWay}"  TextAlignment="Center" VerticalContentAlignment="Center"/>
+                                <Button Grid.Column="5" Content="x" Margin="3" Padding="3" Tag="{Binding}" Click="RemoveTransformation_Click" Width="20"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+            <StackPanel Grid.Row="3">
+                <ItemsControl ItemsSource="{Binding Joints}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="3" Background="Transparent" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" Tag="{Binding}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock VerticalAlignment="Center">
+                                    <Run>Joint parameter</Run>
+                                    <Run Text="{Binding Path=Number}"/>
+                                </TextBlock>
+                                <TextBlock Grid.Column="1" Text="{Binding X}" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <ComboBox Margin="{StaticResource ContentMargin}" Style="{StaticResource ComboBox}" Grid.Column="2" ItemsSource="{Binding StringParameterValues}" SelectedItem="{Binding StringParameter, Mode=TwoWay}" VerticalAlignment="Center"/>
+                                <Slider Grid.ColumnSpan="3" Grid.Row="1" Maximum="{Binding Maximum}" Minimum="{Binding Minimum}" Value="{Binding Path=X, Mode=TwoWay}" Margin="{StaticResource ContentMargin}"/>
+                                <Grid Grid.Row="2" Grid.ColumnSpan="3" Visibility="{Binding IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Content="-90°" Style="{StaticResource Button}" Margin="0,6,3,0" Tag="{Binding}" Click="Minus90Degrees_Click"/>
+                                    <Button Grid.Column="1" Content="+90°" Style="{StaticResource Button}" Margin="0,6,3,0" Tag="{Binding}" Click="Plus90Degrees_Click"/>
+                                    <Button Grid.Column="2" Content="0" Style="{StaticResource Button}" Margin="0,6,3,0" Tag="{Binding}" Click="Zero_Click"/>
+                                    <Button Grid.Column="3" Content="-0.5" Style="{StaticResource Button}" Margin="0,6,3,0" Tag="{Binding}" Click="MinusHalf_Click"/>
+                                    <Button Grid.Column="4" Content="+0.5" Style="{StaticResource Button}" Margin="0,6,0,0" Tag="{Binding}" Click="PlusHalf_Click"/>                                    
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

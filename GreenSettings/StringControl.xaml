@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Green.Settings.UI.StringControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" MouseDoubleClick="UserControl_MouseDoubleClick">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Style.xaml"/>
+    </UserControl.Resources>
+    <Border Style="{StaticResource RootContainer}" IsEnabled="{Binding IsReadOnly, Converter={StaticResource BooleanInverter}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding FriendlyName}" VerticalAlignment="Center" FontWeight="{Binding HasDefaultValue, Converter={StaticResource HasDefaultValueToFontWeightConverter}}" TextTrimming="CharacterEllipsis"/>
+            <TextBox Grid.Row="1" Text="{Binding Value, Mode=TwoWay}" VerticalAlignment="Center" Margin="{StaticResource ContentMargin}"/>
+        </Grid>
+    </Border>
+</UserControl>

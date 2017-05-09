@@ -1,0 +1,34 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Green.Settings.UI">
+    <Style x:Key="RootContainer" TargetType="Border">
+        <Setter Property="Margin">
+            <Setter.Value>
+                <Thickness Bottom="5" Left="5" Right="5" Top="5"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ComboBox" TargetType="ComboBox">
+        <Setter Property="Padding">
+            <Setter.Value>
+                <Thickness Bottom="3" Left="3" Right="3" Top="3"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Button" TargetType="Button">
+        <Setter Property="Padding">
+            <Setter.Value>
+                <Thickness Bottom="3" Left="3" Right="3" Top="3"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Thickness x:Key="ContentMargin" Top="3"/>
+    <local:SettingToUIConverter x:Key="SettingUIConverter"/>
+    <local:SettingGroupToUIConverter x:Key="SettingGroupToUIConverter"/>
+    <local:HasDefaultValueToFontWeightConverter x:Key="HasDefaultValueToFontWeightConverter"/>
+    <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <local:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter"/>
+    <local:ReferenceValueToVisibilityConverter x:Key="ReferenceValueToVisibilityConverter"/>
+    <local:BooleanInverter x:Key="BooleanInverter"/>
+</ResourceDictionary>

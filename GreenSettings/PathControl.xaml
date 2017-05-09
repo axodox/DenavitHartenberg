@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Green.Settings.UI.PathControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Green.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" MouseDoubleClick="UserControl_MouseDoubleClick">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Style.xaml"/>
+    </UserControl.Resources>
+    <Border Style="{StaticResource RootContainer}" IsEnabled="{Binding IsReadOnly, Converter={StaticResource BooleanInverter}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding FriendlyName}" Grid.ColumnSpan="2" VerticalAlignment="Center" FontWeight="{Binding HasDefaultValue, Converter={StaticResource HasDefaultValueToFontWeightConverter}}"/>
+            <TextBlock Grid.Row="1" Text="{Binding AbsolutePath}" VerticalAlignment="Center" Margin="{StaticResource ContentMargin}" TextTrimming="CharacterEllipsis"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="{x:Static p:Resources.Browse}"  Style="{StaticResource Button}" Margin="{StaticResource ContentMargin}" Padding="3" Click="Button_Click"/>            
+        </Grid>
+    </Border>
+</UserControl>

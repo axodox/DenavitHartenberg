@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Green.Settings.UI.BooleanControl" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BooleanControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.UI.SettingToUIConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Green.Settings.UI.SettingGroupToUIConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Green.Settings.UI.HasDefaultValueToFontWeightConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Green.Settings.UI.EnumControl" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.UI.NumericControl" Collapsed="true">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NumericControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.UI.SettingControl" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABACAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SettingControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.UI.SettingGroupControl" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SettingGroupControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.UI.SettingManagerControl" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAQAAAAAAAAAAAQBAAAAAAAAAIAAIAAAAAAAA=</HashCode>
+      <FileName>SettingManagerControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.Setting">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Green.Settings.Setting.Types" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GreenSettings.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAEQEEAAAAAAAIAQIAAAAEQAgWAAABUwBQAQAIAAEBA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Green.Settings.NumericSetting">
+    <Position X="1.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.NumericSetting&lt;T&gt;">
+    <Position X="1.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAACAAAAAAAAAAAAAAAAAACBAACQgAAAgAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.BooleanSetting">
+    <Position X="3.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAACQgAAAgAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.EnumSetting">
+    <Position X="5.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAABgAAAAAAAAAEAAAAAAEAAIAAAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.EnumSetting&lt;T&gt;">
+    <Position X="5.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAACQgAAAgAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.SettingGroup" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABQAACAAAAAAAAQIAAAAIQAwEAAAFAQgAAQABAEERI=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Green.Settings.SettingManager" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAQAAAAAAUEAAAAAAAAAAAAAAQAAAAAQEAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.SettingAvailabilityProvider" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.DependentAvailability" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAgAgAAgAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.MatrixSetting">
+    <Position X="12.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAACAAAAAAAACBAACQgAAAgAAgAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.StringSetting">
+    <Position X="14.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAACBAACQgAAAgAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.PathSetting">
+    <Position X="14.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAQAAEAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.SizeSetting">
+    <Position X="8" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAFEAAAAQAQAAAAEAAACAAAAQgAAAQAAAIEBA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.RectangleSetting">
+    <Position X="10.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAACQgAAAgAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.SettingSetter" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAEAAgAAAAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Green.Settings.DenavitHartenbergSetting">
+    <Position X="17" Y="8" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Green.Settings.DenavitHartenbergSetting.Joint" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GreenSettings.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABCAiQAAAAAAAAAAACAAAAQgAAAAAAAAAAA=</HashCode>
+      <FileName>GreenSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
