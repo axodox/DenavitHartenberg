@@ -27,7 +27,7 @@ namespace Green
 			virtual HandleRef BuildWindowCore(HandleRef hwndParent) override
 			{
 				HWND parent = (HWND)hwndParent.Handle.ToPointer();
-
+        
 				Host = nullptr;
 				Host = CreateWindowEx(
 					0, L"static", L"",

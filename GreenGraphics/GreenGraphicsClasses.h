@@ -185,7 +185,7 @@ namespace Green
 					&Device,
 					NULL,
 					&DeviceContext));
-
+        
 				LPRECT clientRect = 0;
 				GetClientRect(hWnd, clientRect);
 				Viewport = new D3D11_VIEWPORT();
