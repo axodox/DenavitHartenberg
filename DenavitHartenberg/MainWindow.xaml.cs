@@ -149,8 +149,8 @@ namespace DenavitHartenberg
 
         private void SetActiveJoint()
         {
-            GraphicsCore.SetActiveJoint(
-                Model.ActiveJoint == null ? -1 : Model.ActiveJoint.Number);
+            GraphicsCore.ActiveJoint = 
+                Model.ActiveJoint == null ? -1 : Model.ActiveJoint.Number;
         }
 
         private void SetModel()

@@ -486,6 +486,11 @@ namespace Green
 				MoveLightWithCamera = moveLightWithCamera;
 			}
 
+      int GetActiveJoint()
+      {
+        return HighlightedJoint;
+      }
+
 			void SetActiveJoint(int index)
 			{
 				HighlightedJoint = index;

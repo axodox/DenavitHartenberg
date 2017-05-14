@@ -115,10 +115,26 @@ namespace Green
 				}
 			}
 
-			void SetActiveJoint(int index)
-			{
-				if (XWindow) XWindow->SetActiveJoint(index);
-			}
+      property int ActiveJoint {
+        int get()
+        {
+          if (XWindow)
+          {
+            return XWindow->GetActiveJoint();
+          }
+          else
+          {
+            return 0;
+          }
+        }
+        void set(int index)
+        {
+          if (XWindow)
+          {
+            XWindow->SetActiveJoint(index);
+          }
+        }
+      }
 
 			void SetModel(cli::array<float>^ model, cli::array<byte>^ params, int jointCount, float componentSize)
 			{
